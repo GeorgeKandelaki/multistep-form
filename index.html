@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- displays site properly based on user's device -->
+
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png" />
+
+		<link rel="stylesheet" href="css/style.css" />
+
+		<title>Frontend Mentor | Multi-step form</title>
+
+		<!-- Feel free to remove these styles or customize in your own stylesheet 👍 -->
+		<style>
+			.attribution {
+				font-size: 11px;
+				text-align: center;
+				display: none;
+			}
+			.attribution a {
+				color: hsl(228, 45%, 44%);
+			}
+		</style>
+
+		<script src="/js/index.js" defer></script>
+	</head>
+	<body>
+		<main class="main">
+			<div class="wrapper">
+				<div class="sidebar">
+					<!-- Sidebar start -->
+					<!-- <div class="sidebar__wrapper"> -->
+					<div class="sidebar__step">
+						<div class="step__step step__step-1 step--active" data-step="1">1</div>
+						<div class="step__wrapper">
+							<span>Step 1</span> <strong class="step__description"> Your info </strong>
+						</div>
+					</div>
+
+					<div class="sidebar__step">
+						<div class="step__step step__step-2" data-step="2">2</div>
+						<div class="step__wrapper">
+							<span>Step 2</span> <strong class="step__description"> Select plan </strong>
+						</div>
+					</div>
+
+					<div class="sidebar__step">
+						<div class="step__step step__step-3" data-step="3">3</div>
+						<div class="step__wrapper">
+							<span>Step 3</span> <strong class="step__description"> Add-ons </strong>
+						</div>
+					</div>
+
+					<div class="sidebar__step">
+						<div class="step__step step__step-4" data-step="4">4</div>
+						<div class="step__wrapper">
+							<span>Step 4</span>
+							<strong class="step__description"> Summary </strong>
+						</div>
+						<!-- </div> -->
+					</div>
+
+					<!-- Sidebar end -->
+				</div>
+
+				<div class="form">
+					<div class="step step--1" data-step="1">
+						<!-- Step 1 start -->
+
+						<div class="form__header">
+							<h2 class="heading-secondary">Personal info</h2>
+							<p class="form__description">Please provide your name, email address, and phone number.</p>
+						</div>
+
+						<div class="form__form">
+							<div class="form__field">
+								<div class="form__labels">
+									<label for="name" class="form__label">Name</label>
+									<label for="name" class="form__label-error"></label>
+								</div>
+								<input type="text" id="name" class="form__input" placeholder="e.g. Stephen King" />
+							</div>
+							<div class="form__field">
+								<div class="form__labels">
+									<label for="email" class="form__label"> Email Address </label>
+									<label for="email" class="form__label-error"></label>
+								</div>
+								<input
+									type="email"
+									id="email"
+									class="form__input"
+									placeholder="e.g. stephenking@lorem.com"
+								/>
+							</div>
+
+							<div class="form__field">
+								<div class="form__labels">
+									<label for="phone" class="form__label">Phone Number </label>
+									<label for="phone" class="form__label-error"></label>
+								</div>
+								<input type="number" id="phone" class="form__input" placeholder="e.g. +1 234 567 890" />
+							</div>
+						</div>
+
+						<!-- Step 1 end -->
+					</div>
+
+					<div class="step step--2 hidden" data-step="2">
+						<!-- Step 2 start -->
+						<div class="form__header">
+							<h2 class="form__heading heading-secondary">Select your plan</h2>
+							<p class="form__description">You have the option of monthly or yearly billing.</p>
+						</div>
+
+						<div class="select">
+							<div class="select__option" data-value="Arcade" data-price="9">
+								<div class="select__img">
+									<img src="/assets/images/icon-arcade.svg" alt="Image of the option" />
+								</div>
+
+								<div class="select__info">
+									<p class="select__heading">Arcade</p>
+									<p class="select__price" data-price="9">$9/mo</p>
+									<p class="select__yearly hidden">2 months free</p>
+								</div>
+							</div>
+							<div class="select__option" data-value="Advanced" data-price="12">
+								<div class="select__img">
+									<img src="/assets/images/icon-advanced.svg" alt="Image of the option" />
+								</div>
+
+								<div class="select__info">
+									<p class="select__heading">Advanced</p>
+									<p class="select__price" data-price="12">$12/mo</p>
+									<p class="select__yearly hidden">2 months free</p>
+								</div>
+							</div>
+							<div class="select__option" data-value="Pro" data-price="15">
+								<div class="select__img">
+									<img src="/assets/images/icon-pro.svg" alt="Image of the option" />
+								</div>
+
+								<div class="select__info">
+									<p class="select__heading">Pro</p>
+									<p class="select__price" data-price="15">$15/mo</p>
+									<p class="select__yearly hidden">2 months free</p>
+								</div>
+							</div>
+						</div>
+						<div class="slider">
+							<div class="slider__option">Monthly</div>
+							<div class="slider__ball"><span class="ball">&nbsp;</span></div>
+							<div class="slider__option">Yearly</div>
+						</div>
+
+						<!-- Step 2 end -->
+					</div>
+
+					<div class="step step--3 hidden" data-step="3">
+						<!-- Step 3 start -->
+						<div class="form__header">
+							<h2 class="form__heading heading-secondary">Pick add-ons</h2>
+							<p class="form__description">Add-ons help enhance your gaming experience.</p>
+						</div>
+
+						<div class="addons">
+							<div class="addons__option" data-price="1" data-name="Online service">
+								<div class="addons__wrapper">
+									<input type="checkbox" class="addons__cb" />
+									<div class="addons__info">
+										<p class="addons__heading">Online service</p>
+										<p class="addons__description">Access to multiplayer games</p>
+									</div>
+								</div>
+
+								<p class="addons__price">+$1/mo</p>
+							</div>
+
+							<div class="addons__option" data-price="2" data-name="Larger storage">
+								<div class="addons__wrapper">
+									<input type="checkbox" class="addons__cb" />
+									<div class="addons__info">
+										<p class="addons__heading">Larger storage</p>
+										<p class="addons__description">Extra 1TB of cloud save</p>
+									</div>
+								</div>
+
+								<p class="addons__price">+$2/mo</p>
+							</div>
+							<div class="addons__option" data-price="2" data-name="Customizable Profile">
+								<div class="addons__wrapper">
+									<input type="checkbox" class="addons__cb" />
+									<div class="addons__info">
+										<p class="addons__heading">Customizable Profile</p>
+										<p class="addons__description">Custom theme on your profile</p>
+									</div>
+								</div>
+
+								<p class="addons__price">+$2/mo</p>
+							</div>
+						</div>
+
+						<!-- Step 3 end -->
+					</div>
+
+					<div class="step step--4 hidden" data-step="4">
+						<!-- Step 4 start -->
+						<div class="form__header">
+							<h2 class="form__heading heading-secondary">Finishing up</h2>
+							<p class="form__description">Double-check everything looks OK before confirming.</p>
+						</div>
+
+						<div class="summary">
+							<!-- <div class="summary__wrapper">
+								<div class="summary__header">
+									<div class="summary__chosen">
+										<p class="summary__packet">Pro (Monthly)</p>
+										<p class="btn summary__change">Change</p>
+									</div>
+
+									<p class="summary__packet-price">$150/yr</p>
+								</div>
+
+
+								<div class="summary__info">
+									<div class="summary__addon">
+										<p class="summary__addon-name">Online Service</p>
+										<p class="summary__addon-price">+$10/yr</p>
+									</div>
+
+									<div class="summary__addon">
+										<p class="summary__addon-name">Larger storage</p>
+										<p class="summary__addon-price">+$2/yr</p>
+									</div>
+
+									<div class="summary__addon">
+										<p class="summary__addon-name">Customizable profile</p>
+										<p class="summary__addon-price">+$2/yr</p>
+									</div>
+								</div>
+							</div>
+
+							<div class="summary__total-box">
+								<p class="summary__text">Total (Monthly)</p>
+								<p class="summary__total">$200/yr</p>
+							</div> -->
+						</div>
+
+						<!-- Step 4 end -->
+					</div>
+
+					<div class="step step--5 step__ending hidden" data-step="5">
+						<!-- Step 5 start -->
+						<div class="ending">
+							<div class="ending__header">
+								<div class="ending__img-box">
+									<img
+										src="/assets/images/icon-thank-you.svg"
+										alt="Image of confirmation"
+										class="ending__img"
+									/>
+								</div>
+
+								<h2 class="ending__text">Thank you!</h2>
+							</div>
+
+							<p class="ending__content">
+								Thanks for confirming your subscription! We hope you have fun using our platform. If you
+								ever need support, please feel free to email us at support@loremgaming.com.
+							</p>
+						</div>
+						<!-- Step 5 end -->
+					</div>
+				</div>
+
+				<div class="form__btns">
+					<button class="btn btn__back hidden">Go Back</button>
+					<button class="btn btn__next">Next Step</button>
+					<button class="btn btn__confirm hidden">Confirm</button>
+				</div>
+			</div>
+		</main>
+
+		<div class="attribution">
+			Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+			Coded by <a href="https://github.com/georgekandelaki">George Kandelaki</a>.
+		</div>
+	</body>
+</html>
